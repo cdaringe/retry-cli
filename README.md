@@ -1,10 +1,13 @@
-# retry-cli
+# @cdaringe/retry-cli
 
 Command line interface for retrying other commands with exponential backoff.
 
+Fork of https://github.com/jiangmiao/node-getopt with some minor bugs fixed
+and internally TypeScript'ed.
+
 ## Installation
 
-    npm install retry-cli
+    npm install @cdaringe/retry-cli
 
 ## Based on
 
@@ -12,8 +15,8 @@ Just a command line interface to https://www.npmjs.com/package/retry
 
 ## Example
 
-```
--> % node cli.js -t 1000 -n 3 -- ls asdf
+```sh
+$ retry -t 1000 -n 3 -- ls asdf
 ls: asdf: No such file or directory
 ls: asdf: No such file or directory
 ls: asdf: No such file or directory

@@ -1,17 +1,19 @@
 {
-  "author": "Jon Tirsen <jon@tirsen.com>",
-  "name": "retry-cli",
-  "description": "Retry with exponential backoff for the command line.",
+  "author": "cdaringe",
+  "name": "@cdaringe/retry-cli",
+  "description": "Retry on the command line.",
   "license": "MIT",
-  "version": "0.6.0",
-  "homepage": "https://github.com/tirsen/retry-cli",
-  "type": "module",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cdaringe/retry-cli",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tirsen/retry-cli.git"
+    "url": "git://github.com/cdaringe/retry-cli.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "bin": {
-    "retry": "./cli.js"
+    "retry": "./dist/bin/cli.js"
   },
   "engines": {
     "node": "*"
@@ -22,11 +24,21 @@
     "retry": "^0.13.1"
   },
   "devDependencies": {
-    "ava": "^4.2.0",
-    "execa": "^6.1.0"
+    "@types/cross-spawn": "6.0.6",
+    "@types/node": "24.1.0",
+    "@types/node-getopt": "0.2.35",
+    "@types/retry": "0.12.5",
+    "execa": "9.6.0",
+    "tsx": "4.20.3",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
   },
+  "files": [
+    "dist/bin"
+  ],
   "scripts": {
-    "test": "LANG=en_US.UTF-8 ava",
+    "build": "tsc",
+    "test": "vitest run ",
     "start": "node ./cli.js"
   }
 }
